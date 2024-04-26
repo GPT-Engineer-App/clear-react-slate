@@ -4,7 +4,7 @@ import { Box, Button, Input, Text, VStack, HStack } from "@chakra-ui/react";
 const NotesPage = () => {
   const [notes, setNotes] = useState([]);
   const [newNote, setNewNote] = useState("");
-  const apiUrl = "https://mnwefvnykbgyhbdzpleh.supabase.co";
+  const apiUrl = "https://mnwefvnykbgyhbdzpleh.supabase.co/rest/v1";
 
   useEffect(() => {
     const fetchNotes = async () => {
@@ -20,6 +20,7 @@ const NotesPage = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1ud2Vmdm55a2JneWhiZHpwbGVoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTMyNzQ3MzQsImV4cCI6MjAyODg1MDczNH0.tnHysd1LqayzpQ1L-PImcvlkUmkNvocpMS7tS-hYZNg",
       },
       body: JSON.stringify({ note: newNote }),
     });
@@ -32,6 +33,7 @@ const NotesPage = () => {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1ud2Vmdm55a2JneWhiZHpwbGVoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTMyNzQ3MzQsImV4cCI6MjAyODg1MDczNH0.tnHysd1LqayzpQ1L-PImcvlkUmkNvocpMS7tS-hYZNg",
       },
       body: JSON.stringify({ id, note: updatedNote }),
     });
@@ -44,6 +46,7 @@ const NotesPage = () => {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1ud2Vmdm55a2JneWhiZHpwbGVoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTMyNzQ3MzQsImV4cCI6MjAyODg1MDczNH0.tnHysd1LqayzpQ1L-PImcvlkUmkNvocpMS7tS-hYZNg",
       },
       body: JSON.stringify({ id }),
     });
